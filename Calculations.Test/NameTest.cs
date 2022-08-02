@@ -11,5 +11,13 @@ namespace Calculations.Test
             var result = name.MakeFullName("Elias", "Jurado");
             Assert.Equal("Elias Jurado", result);
         }
+
+        [Fact]
+        public void MakeFullName_IgnoreCase()
+        {
+            var name = new Name();
+            var result = name.MakeFullName("elias", "jurado");
+            Assert.Equal("Elias Jurado", result, ignoreCase: true);
+        }
     }
 }
