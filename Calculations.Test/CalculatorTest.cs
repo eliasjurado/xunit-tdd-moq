@@ -5,9 +5,14 @@ namespace Calculations.Test
     public class CalculatorTest
     {
         [Fact]
-        public void TestAdd()
+        public void TestFoo()
         {
             Assert.True(true);
+        }
+        [Fact]
+        public void TestAdd()
+        {
+            Assert.Equal(1, 2);
         }
     }
 }
