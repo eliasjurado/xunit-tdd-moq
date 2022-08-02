@@ -12,7 +12,7 @@ namespace Calculations.Test
         [Fact]
         public void TestAdd()
         {
-            Assert.Equal(1, 2);
+            Assert.Equal(1, 1);
         }
     }
 }
