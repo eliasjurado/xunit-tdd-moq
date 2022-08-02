@@ -6,5 +6,10 @@
         {
             return a + b;
         }
+
+        public double AddDouble(double c, double d)
+        {
+            return c + d;
+        }
     }
 }
