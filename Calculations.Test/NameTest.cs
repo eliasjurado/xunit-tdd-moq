@@ -60,5 +60,29 @@ namespace Calculations.Test
             var result = name.MakeFullName("Elias", "Jurado");
             Assert.Matches("[A-Z]{1}[a-z]+ [A-Z]{1}[a-z]+", result);
         }
+
+        [Fact]
+        public void NickName_MustBeNull()
+        {
+            var name = new Name();
+            var result = name.NickName;
+            Assert.Null(result);
+        }
+        [Fact]
+        public void NickName_MustNotBeNull()
+        {
+            var name = new Name();
+            var result = name.NickName;
+            Assert.NotNull(result);
+        }
+        [Fact]
+        public void NickName_AlwaysReturnsValue()
+        {
+            var name = new Name();
+            var result = name.MakeFullName("Elias", "Jurado");
+            Assert.NotNull(result);
+            Assert.True(!string.IsNullOrEmpty(result));
+            Assert.False(string.IsNullOrEmpty(result));
+        }
     }
 }
