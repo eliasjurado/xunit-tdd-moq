@@ -5,6 +5,15 @@
         public string Name => "Elias";
         public int Age => 36;
 
+        public int GetOrdersByName(string name)
+        {
+
+            if (string.IsNullOrEmpty(name))
+            {
+                throw new ArgumentException("This user does not receive any discount");
+            }
+            return 100;
+        }
 
     }
 }
