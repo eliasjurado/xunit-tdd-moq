@@ -5,7 +5,7 @@
         public string Name => "Elias";
         public int Age => 36;
 
-        public int GetOrdersByName(string name)
+        public virtual int GetOrdersByName(string name)
         {
 
             if (string.IsNullOrEmpty(name))

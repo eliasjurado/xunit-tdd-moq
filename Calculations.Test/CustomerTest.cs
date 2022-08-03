@@ -25,7 +25,19 @@ namespace Calculations.Test
             {
                 customer.GetOrdersByName("");
             });
-            Assert.Equal("", exceptionDetails.Message);
+            Assert.Equal("This user does not receive any discount", exceptionDetails.Message);
+        }
+        [Fact]
+        public void LoyalCustomer_OrderGreaterThan100()
+        {
+            Customer customer = CustomerFactory.CreateCustomerInstance(102);
+            // Just assert
+            Assert.IsType(typeof(LoyalCustomer), customer);
+
+            // First step
+            var loyalcustomer = Assert.IsType<LoyalCustomer>(customer);
+            // Second step
+            Assert.Equal(10, loyalcustomer.Discount);
         }
     }
 }
