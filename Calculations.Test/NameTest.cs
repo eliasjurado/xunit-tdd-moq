@@ -72,7 +72,7 @@ namespace Calculations.Test
         public void NickName_MustNotBeNull()
         {
             var name = new Name();
-            var result = name.NickName;
+            var result = name.NickName = "elaias";
             Assert.NotNull(result);
         }
         [Fact]
