@@ -8,13 +8,11 @@ namespace Calculations.Test
     {
         public readonly ITestOutputHelper _testOutputHelper;
         public readonly CalculatorFixture _calculationsFixture;
-        public readonly MemoryStream memoryStream;
+
         public CalculatorTest(ITestOutputHelper testOutputHelper, CalculatorFixture calculationsFixture)
         {
             _testOutputHelper = testOutputHelper;
             _calculationsFixture = calculationsFixture;
-
-            memoryStream = new MemoryStream();
         }
         [Fact]
         public void TestFoo()
