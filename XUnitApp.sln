@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Calculations", "Calculation
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01-Calculations", "01-Calculations", "{EA530E83-DF6A-49D1-9F07-EA2A475035DB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Calculations.Test", "Calculations.Test\Calculations.Test.csproj", "{2EA3FFA3-B851-4877-A55D-DB82BA11DEB7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Calculations.Test", "Calculations.Test\Calculations.Test.csproj", "{2EA3FFA3-B851-4877-A55D-DB82BA11DEB7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

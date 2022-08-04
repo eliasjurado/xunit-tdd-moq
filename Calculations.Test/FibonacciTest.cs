@@ -67,9 +67,20 @@ namespace Calculations.Test
             Assert.Equal(false, result);
         }
 
+        //Hardcoding data
         [Theory]
         [InlineData(1, true)]
         [InlineData(200, false)]
+        public void IsOdd_TestOddAndEven_HardCodingData(int value, bool expected)
+        {
+            var fibonacci = _fibonacciFixture.fibonacciSingleton;
+            var result = fibonacci.IsOdd(value);
+            Assert.Equal(expected, result);
+        }
+
+        //Providing test data
+        [Theory]
+        [MemberData(nameof(TestDataShare.IsOddOrEvenData), MemberType = typeof(TestDataShare))]
         public void IsOdd_TestOddAndEven(int value, bool expected)
         {
             var fibonacci = _fibonacciFixture.fibonacciSingleton;
