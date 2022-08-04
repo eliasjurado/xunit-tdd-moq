@@ -4,6 +4,7 @@ using Xunit.Abstractions;
 
 namespace Calculations.Test
 {
+    [Collection("Customer")]
     public class CustomerTest : IClassFixture<CustomerFixture>
     {
         public readonly ITestOutputHelper _testOutputHelper;
