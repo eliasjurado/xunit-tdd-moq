@@ -50,5 +50,31 @@ namespace Calculations.Test
             Fibonacci fibonacci = _fibonacciFixture.fibonacciSingleton;
             Assert.Equal(expectedCollection, fibonacci.FiboNumbers);
         }
+
+        [Fact]
+        public void IsOdd_GivenOddValue_ReturnsTrue()
+        {
+            var fibonacci = _fibonacciFixture.fibonacciSingleton;
+            var result = fibonacci.IsOdd(1);
+            Assert.Equal(true, result);
+        }
+
+        [Fact]
+        public void IsOdd_GivenEvenValue_ReturnsFalse()
+        {
+            var fibonacci = _fibonacciFixture.fibonacciSingleton;
+            var result = fibonacci.IsOdd(1);
+            Assert.Equal(false, result);
+        }
+
+        [Theory]
+        [InlineData(1, true)]
+        [InlineData(200, false)]
+        public void IsOdd_TestOddAndEven(int value, bool expected)
+        {
+            var fibonacci = _fibonacciFixture.fibonacciSingleton;
+            var result = fibonacci.IsOdd(value);
+            Assert.Equal(expected, result);
+        }
     }
 }
