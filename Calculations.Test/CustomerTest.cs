@@ -4,7 +4,7 @@ using Xunit.Abstractions;
 
 namespace Calculations.Test
 {
-    public class CustomerTest
+    public class CustomerTest : IClassFixture<CustomerFixture>
     {
         public readonly ITestOutputHelper _testOutputHelper;
         public readonly CustomerFixture _customerFixture;
