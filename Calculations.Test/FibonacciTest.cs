@@ -78,10 +78,20 @@ namespace Calculations.Test
             Assert.Equal(expected, result);
         }
 
-        //Providing test data
+        //Providing test data in a class
         [Theory]
         [MemberData(nameof(TestDataShare.IsOddOrEvenData), MemberType = typeof(TestDataShare))]
         public void IsOdd_TestOddAndEven(int value, bool expected)
+        {
+            var fibonacci = _fibonacciFixture.fibonacciSingleton;
+            var result = fibonacci.IsOdd(value);
+            Assert.Equal(expected, result);
+        }
+
+        //Providing test data in text file
+        [Theory]
+        [MemberData(nameof(TestDataShare.IsEvenOrOddExternalData), MemberType = typeof(TestDataShare))]
+        public void IsOdd_TestOddAndEvenExternal(int value, bool expected)
         {
             var fibonacci = _fibonacciFixture.fibonacciSingleton;
             var result = fibonacci.IsOdd(value);
