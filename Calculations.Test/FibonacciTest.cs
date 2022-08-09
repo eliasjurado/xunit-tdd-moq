@@ -88,6 +88,15 @@ namespace Calculations.Test
             Assert.Equal(expected, result);
         }
 
+        [Theory]
+        [IsOddOrEvenData] //all this line goes in a class attribute
+        public void IsOdd_TestOddAndEven2(int value, bool expected)
+        {
+            var fibonacci = _fibonacciFixture.fibonacciSingleton;
+            var result = fibonacci.IsOdd(value);
+            Assert.Equal(expected, result);
+        }
+
         //Providing test data in text file
         [Theory]
         [MemberData(nameof(TestDataShare.IsEvenOrOddExternalData), MemberType = typeof(TestDataShare))]
