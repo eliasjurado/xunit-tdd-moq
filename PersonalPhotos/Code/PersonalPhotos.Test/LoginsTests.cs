@@ -29,7 +29,7 @@ namespace PersonalPhotos.Test
 
             _controller = new LoginsController(_logins.Object, _accessor.Object);
         }
-
+        // when the model is valid
         [Fact]
         public void Index_GivenNorReturnUrl_ReturnLoginView()
         {
@@ -40,6 +40,7 @@ namespace PersonalPhotos.Test
             Assert.Equal("Login", result.ViewName, ignoreCase: true);
         }
 
+        // when model is invalid, the app doesnt crash
         [Fact]
         public async Task Login_GivenModelStateInvalid_ReturnLoginView()
         {

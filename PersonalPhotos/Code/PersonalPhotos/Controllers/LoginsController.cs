@@ -30,7 +30,7 @@ namespace PersonalPhotos.Controllers
             if (!ModelState.IsValid)
             {
                 ModelState.AddModelError("", "Invalid login detils");
-                return View("Login", model);
+                return View("Login", model); // when model is invalid, the app doesnt crash
             }
 
             var user = await _loginService.GetUser(model.Email);
