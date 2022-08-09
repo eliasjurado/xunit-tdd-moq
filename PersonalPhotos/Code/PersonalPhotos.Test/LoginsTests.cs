@@ -20,7 +20,7 @@ namespace PersonalPhotos.Test
         {
             _logins = new Mock<ILogins>();
 
-
+            // mocking for test session when the user and pass are ok
             var session = Mock.Of<ISession>();
             var httpContext = Mock.Of<HttpContext>(x => x.Session == session);
 
@@ -53,15 +53,18 @@ namespace PersonalPhotos.Test
         [Fact]
         public async Task Login_GivenCorrectPassword_RedirectToDisplayAction()
         {
-            const string password = "123";
-            var modelView = Mock.Of<LoginViewModel>(x => x.Email == "a@b.com" && x.Password == password);
+            const string password = "123456";
+            const string email = "elias.jurado@globant.com";
+            var modelView = Mock.Of<LoginViewModel>(x => x.Email == email && x.Password == password);
             var model = Mock.Of<User>(x => x.Password == password);
 
+            // with returnsasync it's no needed to write async at the begining of the line
             _logins.Setup(x => x.GetUser(It.IsAny<string>())).ReturnsAsync(model);
+            //It.Any can be used to call parameters or arguments of methods
 
             var result = await _controller.Login(modelView);
 
-            Assert.IsType<RedirectToActionResult>(result);
+            Assert.IsType<RedirectToActionResult>(result);//this checks if the action finally goes to the view
         }
     }
 }
