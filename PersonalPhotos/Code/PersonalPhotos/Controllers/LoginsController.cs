@@ -1,8 +1,8 @@
-﻿using System.Threading.Tasks;
-using Core.Interfaces;
+﻿using Core.Interfaces;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using PersonalPhotos.Models;
+using System.Threading.Tasks;
 
 namespace PersonalPhotos.Controllers
 {
@@ -20,7 +20,7 @@ namespace PersonalPhotos.Controllers
 
         public IActionResult Index(string returnUrl = null)
         {
-            var model = new LoginViewModel { ReturnUrl = returnUrl};
+            var model = new LoginViewModel { ReturnUrl = returnUrl };
             return View("Login", model);
         }
 
