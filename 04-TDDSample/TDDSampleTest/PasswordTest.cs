@@ -10,7 +10,7 @@ namespace TDDSampleTest
         public void Validate_GivenLongerThan8Chars_ReturnsTrue()
         {
             var targetTest = new DefaultPasswordValidator();
-            var password = "1234567890";
+            var password = "1234567890A";
             var validationResult = targetTest.Validate(password);
 
             Assert.True(validationResult);
@@ -23,7 +23,7 @@ namespace TDDSampleTest
             //We can set values manually...
             //var password = "1234567";
             //... but it would be robuster if we create a method
-            var password = MakeString(7);
+            var password = $"{MakeString(6)}A";
             var validationResult = targetTest.Validate(password);
 
             Assert.False(validationResult);
@@ -43,7 +43,7 @@ namespace TDDSampleTest
         public void Validate_GivenOneUpperCase_ReturnsTrue()
         {
             var targetTest = new DefaultPasswordValidator();
-            var password = "aBc";
+            var password = $"{MakeString(7)}A";
             var validationResult = targetTest.Validate(password);
 
             Assert.True(validationResult);
