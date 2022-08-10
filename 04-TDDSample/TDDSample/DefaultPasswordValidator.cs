@@ -4,7 +4,15 @@
     {
         public bool Validate(string password)
         {
-            throw new NotImplementedException();
+            if (password.Length < 8)
+            {
+                return false;
+            }
+            if (!password.Any(x => !char.IsUpper(x)))
+            {
+                return false;
+            }
+            return true;
         }
     }
 }
