@@ -27,6 +27,26 @@ namespace TDDSampleTest
             Assert.False(validationResult);
         }
 
+        [Fact]
+        public void Validate_GivenNoUpperCase_ReturnsFalse()
+        {
+            var targetTest = new DefaultPasswordValidator();
+            var password = "abc";
+            var validationResult = targetTest.Validate(password);
+
+            Assert.False(validationResult);
+        }
+
+        [Fact]
+        public void Validate_GivenOneUpperCase_ReturnsTrue()
+        {
+            var targetTest = new DefaultPasswordValidator();
+            var password = "aBc";
+            var validationResult = targetTest.Validate(password);
+
+            Assert.True(validationResult);
+        }
+
         private string MakeString(int lenght)
         {
             string result = "";
