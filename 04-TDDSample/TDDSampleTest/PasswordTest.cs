@@ -5,6 +5,7 @@ namespace TDDSampleTest
 {
     public class PasswordTest
     {
+        //First scenario
         [Fact]
         public void Validate_GivenLongerThan8Chars_ReturnsTrue()
         {
@@ -14,7 +15,7 @@ namespace TDDSampleTest
 
             Assert.True(validationResult);
         }
-
+        //Second scenario
         [Fact]
         public void Validate_GivenShorterThan8Chars_ReturnsFalse()
         {
@@ -27,7 +28,7 @@ namespace TDDSampleTest
 
             Assert.False(validationResult);
         }
-
+        //Third scenario
         [Fact]
         public void Validate_GivenNoUpperCase_ReturnsFalse()
         {
@@ -37,7 +38,7 @@ namespace TDDSampleTest
 
             Assert.False(validationResult);
         }
-
+        //Fourth scenario
         [Fact]
         public void Validate_GivenOneUpperCase_ReturnsTrue()
         {
@@ -47,7 +48,7 @@ namespace TDDSampleTest
 
             Assert.True(validationResult);
         }
-
+        //Fifth scenario
         private string MakeString(int lenght)
         {
             string result = "";
