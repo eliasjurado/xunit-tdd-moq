@@ -8,7 +8,7 @@
             {
                 return false;
             }
-            if (!password.Any(x => !char.IsUpper(x)))
+            if (!password.Any(x => char.IsUpper(x)))
             {
                 return false;
             }
